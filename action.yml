@@ -48,5 +48,5 @@ inputs:
     description: 'Create alert/failure annotations on the given file, even if unchanged. The specified filepath can be relative to the repo root'
     required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
