@@ -25,11 +25,11 @@ inputs:
   comment-always:
     description: 'Leave a comment with the benchmark result comparison. To enable this feature, the `github-token` input is required'
     required: false
-    default: false
+    default: 'false'
   comment-on-alert:
     description: 'Leave a comment when the PR benchmark result is worse than the base branch, based on the threshold specified in the `alert-comment-threshold` input. To enable this feature, the `github-token` input is required'
     required: false
-    default: false
+    default: 'false'
   alert-threshold:
     description: 'Threshold which determines when to trigger a comment alert. Percentage values such as "150%" are supported. For example, 150% means that an alert happens when the PR benchmark result is 1.5x slower than the base branch'
     required: false
@@ -37,7 +37,7 @@ inputs:
   fail-on-alert:
     description: 'Workflow fails when `fail-treshold` is exceeded'
     required: false
-    default: true
+    default: 'true'
   fail-threshold:
     description: 'Threshold which determines when the workflow should fail. Format is the same as the `alert-threshold` input. If this value is not specified, the same value as `alert-threshold` is used'
     required: false
@@ -48,5 +48,5 @@ inputs:
     description: 'Create alert/failure annotations on the given file, even if unchanged. The specified filepath can be relative to the repo root'
     required: false
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
